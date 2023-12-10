@@ -11,8 +11,10 @@ class ShoppingCartItem extends Model
     protected $fillable = [
         'user_id',
         'product_id',
+        'shopping_cart_id',
         'quantity',
     ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -22,4 +24,9 @@ class ShoppingCartItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
+    public function shoppingCart()
+    {
+        return $this->belongsTo(ShoppingCart::class);
+    }
+
 }
